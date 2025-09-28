@@ -1,0 +1,261 @@
+//Exercícios 1
+//Aluno: Dimitri Seara Castro Camargo
+public class Main{
+    public static void main(String[]args){
+        int num=100;
+        while (num<=200){
+            System.out.println(num);
+            num++;
+        }
+    }
+}
+
+//Exercícios 2
+//Aluno: Dimitri Seara Castro Camargo 
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner nota= new Scanner(System.in);
+        int contador=0;
+        int pares=0;
+        int impares=0;
+
+        while (contador <10 ) {
+            System.out.println("Digite o "+ (contador + 1) +" numero: " );
+            int numero= nota.nextInt();
+
+            if(numero %2 ==0){
+                pares++;
+            }else {
+                impares++;
+            }
+            contador++;
+        }
+        System.out.println("A quantidades de pares são: "+ pares);
+        System.out.println("A quantidades de impares são: "+ impares);
+    }
+}
+
+//Exercícios 3
+//Aluno: Dimitri Seara Castro Camargo
+import java.util.Scanner;
+public class Main {
+    public static void main (String[] args){
+        Scanner ler=new Scanner(System.in);
+        System.out.println("Digite um numero: ");
+        int limite= ler.nextInt();
+        int valor=1;
+        while (valor <= limite){
+            System.out.println(valor+ "");
+            valor*=2;
+        }
+    }
+}
+
+//Exercícios 4
+//Aluno: Dimitri Seara Castro Camargo
+import java.util.Scanner;
+public class Main{
+    public static void main(String[]args ){
+        Scanner ler=new Scanner(System.in);
+        double v1, v2;
+        System.out.println("Digite um numero: ");
+        v1= ler.nextDouble();		
+        System.out.println("Digite outro valor: ");
+        v2= ler.nextDouble();
+        while (v1 <= v2){
+            double d1 = v1/2;
+            System.out.printf("\n A metade de %.2f é %.2f", v1, d1);
+            v1=v1+1;
+        }
+    }
+}
+
+//Exercícios 5
+//Aluno: Dimitri Seara Castro Camargo 
+public class Main {
+    public static void main(String[] args) {
+        int contador =1;
+        int tabuada =5;
+
+        while(contador <=10){
+            System.out.println(tabuada + "x" + contador + "="+(tabuada*contador));
+        contador++;
+        }
+    }
+}
+
+//Exercícios 6
+//Aluno: Dimitri Seara Castro Camargo   
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+        int contador =0;
+
+        System.out.println("Digite o 1º numero: ");
+        int num1=ler.nextInt();
+
+        int maior=num1;
+        int menor=num1;
+
+        while(contador <9){
+            System.out.println("Digite os "+ (contador + 2 )+ " numeros:");
+            int num=ler.nextInt();
+            if(num>maior){
+                maior=num;
+            }if (num<menor){
+                menor=num;
+            }
+            contador++;
+        }
+        System.out.println("O maior numero é: "+maior);
+        System.out.println("O menor numero é: "+menor);
+    }
+}
+
+//Exercícios 7
+//Aluno: Dimitri Seara Castro Camargo
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+        int contador = 0;
+        int saudaveis = 0;
+
+        while (contador < 10) {
+            System.out.println("Pessoa " + (contador + 1));
+
+            System.out.print("Digite o peso (kg): ");
+            double peso = ler.nextDouble();
+
+            System.out.print("Digite a altura (m): ");
+            double altura = ler.nextDouble();
+
+            double imc =peso/(altura*altura);
+            System.out.printf("IMC da pessoa %d: %.2f\n", contador + 1, imc);
+
+            if (imc >= 18.5 && imc <= 24.9) {
+                saudaveis++;
+            }
+
+            contador++;
+            System.out.println("--------------");
+        }
+
+        System.out.println("Quantidade de pessoas com IMC saudável (entre 18.5 e 24.9): " + saudaveis);
+    }
+}
+
+//EXercícios 8
+//Aluno: Dimitri Seara Castro Camargo
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+        int aluno=1;
+
+        while(aluno<=5){
+            System.out.println("Aluno "+aluno);
+
+            double nota1,nota2;
+            do{
+                System.out.println("Digite a primeira nota (0 a 10): ");
+                nota1 = ler.nextDouble();
+                if(nota1<0 || nota1>10){
+                    System.out.println("Nota invalida, Tente novamente!!");
+                }
+            }while(nota1<0 || nota1>10);
+            do {
+                System.out.println("Digite a segunda nota (0 a 10): ");
+                nota2 = ler.nextDouble();
+                if(nota2<0 || nota2>10){
+                    System.out.println("Nota invalida, Tente novamente!!");
+                }
+            }while(nota2<0 || nota2>10);
+            double media = (nota1 + nota2) / 2;
+            System.out.printf("A media do aluno %d: %.2f\n ",aluno, media);
+            System.out.println("------------------");
+            aluno++;
+
+        }
+    }
+}
+
+//Exercícios 9
+//Aluno: Dimitri Seara Castro Camargo
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+        double totalCompra = 0;
+        String continuar;
+
+        do {
+            System.out.println("Cardápio:");
+            System.out.println("100 - Cachorro quente     R$ 1,20");
+            System.out.println("101 - Bauru Simples       R$ 1,30");
+            System.out.println("102 - Bauru com ovo       R$ 1,50");
+            System.out.println("103 - Hambúrguer          R$ 1,20");
+            System.out.println("104 - Cheeseburguer       R$ 1,30");
+            System.out.println("105 - Refrigerante        R$ 1,00");
+
+            int codigo;
+            boolean codigoValido;
+
+            do {
+                System.out.print("Digite o código do produto: ");
+                codigo = ler.nextInt();
+                codigoValido = (codigo >= 100 && codigo <= 105);
+
+                if (!codigoValido) {
+                    System.out.println("Código inválido! Tente novamente.");
+                }
+            } while (!codigoValido);
+
+            System.out.print("Digite a quantidade desejada: ");
+            int quantidade = ler.nextInt();
+
+            double preco = 0;
+            String nomeProduto = "";
+
+            switch (codigo) {
+                case 100:
+                    preco = 1.20;
+                    nomeProduto = "Cachorro quente";
+                    break;
+                case 101:
+                    preco = 1.30;
+                    nomeProduto = "Bauru Simples";
+                    break;
+                case 102:
+                    preco = 1.50;
+                    nomeProduto = "Bauru com ovo";
+                    break;
+                case 103:
+                    preco = 1.20;
+                    nomeProduto = "Hambúrguer";
+                    break;
+                case 104:
+                    preco = 1.30;
+                    nomeProduto = "Cheeseburguer";
+                    break;
+                case 105:
+                    preco = 1.00;
+                    nomeProduto = "Refrigerante";
+                    break;
+            }
+
+            double totalProduto = preco * quantidade;
+            System.out.printf("Você comprou %d x %s. Total: R$ %.2f\n", quantidade, nomeProduto, totalProduto);
+
+            totalCompra += totalProduto;
+
+            System.out.print("Deseja comprar outro produto? (S/N): ");
+            continuar = ler.next();
+
+        } while (continuar.equalsIgnoreCase("S"));
+
+        System.out.printf("Valor total da compra: R$ %.2f\n", totalCompra);
+    }
+}

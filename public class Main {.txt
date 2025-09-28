@@ -1,0 +1,219 @@
+//Exercício 1
+//Aluno: Dimitri Seara Castro Camargo 
+public class Main {
+    public static void main(String[] args) {
+
+        for (int i = 100; i >= 1; i--){
+            System.out.println(i);
+        }
+    }
+}
+
+//Exercício 2
+//Aluno: Dimitri Seara Castro Camargo
+public class Main {
+    public static void main(String[] args) {
+
+        for (int i = 15; i <= 100; i++){
+            int quadrado = i*i;
+            System.out.println("Os quadrados de "+ i + " é " +quadrado );
+        }
+    }
+}
+
+//Exercício 3
+//Aluno: Dimitri Seara Castro Camargo
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+        System.out.println("Digite um numero: ");
+        int numero = ler.nextInt();
+
+        for (int i = 1; i <= numero; i++){
+            System.out.println(i);
+        }
+    }
+}
+
+//Exercício 4
+//Aluno: Dimitri Seara Castro Camargo
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+        System.out.println("Digite um numero: ");
+        int contadorMaisde50 = 0;
+        double somaAlturas = 0;
+
+        for (int i = 1; i <= 10; i++){
+            System.out.println("Digite a idade da pessoa "+i+ ":");
+            int idade = ler.nextInt();
+
+            System.out.println("Digite a altura da pessoa "+i+ " (Em metros):");
+            double altura = ler.nextDouble();
+
+            if(idade > 50 ){
+                somaAlturas += altura;
+                contadorMaisde50++;
+            }
+        }
+        if (contadorMaisde50 > 0){
+            double media = somaAlturas/contadorMaisde50;
+            System.out.printf("A média das alturas das pessoas com mais de 50 anos é: %.2f metros\n", media);
+        }else {
+            System.out.println("Nenhuma pessoa com mais de 50 anos foi registrada.");
+        }
+    }
+}
+
+//Exercício 5
+//Aluno Dimitri Seara Castro Camargo
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+        int Aprovados = 0;
+        int Exame = 0;
+        int Reprovados = 0;
+        double somaMedias = 0;
+
+        for (int i = 1; i <= 6; i++) {
+            System.out.println("Aluno " + i);
+
+            System.out.println("Digite a primeira nota: ");
+            double nota1 = ler.nextDouble();
+
+            System.out.println("Digite a segunda nota: ");
+            double nota2 = ler.nextDouble();
+
+            double media = (nota1 + nota2) / 2;
+            somaMedias = somaMedias + media;
+
+            System.out.printf("Media dos aluno %d: %.2f\n", i, media);
+
+            if (media <= 3) {
+                System.out.println("Situação: REPROVADO");
+                Reprovados++;
+            } else if (media < 7) {
+                System.out.println("Situação: EXAME");
+                Exame++;
+            } else {
+                System.out.println("Situação: APROVADO");
+                Aprovados++;
+            }
+            System.out.println("--------------------------");
+        }
+        double mediaClasse = somaMedias / 6;
+
+        System.out.println("Resumo da turma: ");
+        System.out.println("Total de Aprovados: " + Aprovados);
+        System.out.println("Total de Reprovados: " + Reprovados);
+        System.out.println("Total de Exame: " + Exame);
+        System.out.printf("Media Classe: %.2f\n", mediaClasse);
+    }
+}
+
+//Exercício 6
+//Aluno: Dimitri Seara Castro Camargo 
+import java.sql.SQLOutput;
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+        int Candidato1 = 0;
+        int Candidato2 = 0;
+        int Candidato3 = 0;
+        int Candidato4 = 0;
+        int Nulos = 0;
+        int Brancos = 0;
+
+        for (int i = 1; i <= 10; i++) {
+            System.out.println("Eleitor " + i + ", Digite seu voto(1 a 6):");
+            int voto = ler.nextInt();
+
+            switch (voto) {
+                case 1:
+                    Candidato1++;
+                    break;
+                case 2:
+                    Candidato2++;
+                    break;
+                case 3:
+                    Candidato3++;
+                    break;
+                case 4:
+                    Candidato4++;
+                    break;
+                case 5:
+                    Nulos++;
+                    break;
+                case 6:
+                    Brancos++;
+                    break;
+                default:
+                    System.out.println("Voto inválido! Não será contabilizado.");
+            }
+        }
+        int totalVotos = Candidato1 + Candidato2 + Candidato3 + Candidato4 + Nulos + Brancos;
+        int totalBracosENulos = Brancos + Nulos;
+        double percentualBrancosENulos = (totalBracosENulos * 100) / totalVotos;
+
+        System.out.println("Resultado da eleição");
+        System.out.println("Candidato 1: " + Candidato1 + " votos");
+        System.out.println("Candidato 2: " + Candidato2 + " votos");
+        System.out.println("Candidato 3: " + Candidato3 + " votos");
+        System.out.println("Candidato 4: " + Candidato4 + " votos");
+        System.out.println("Votos nulos: " + Nulos);
+        System.out.println("Votos brancos: " + Brancos);
+        System.out.printf("Percentual de votos nulos e brancos: %.2f%%\n", percentualBrancosENulos);
+    }
+}
+
+//Exercício 7
+//Aluno: Dimitri Seara Castro Camargo
+import java.sql.SQLOutput;
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+        int maiores50 = 0;
+        int entre10e20= 0;
+        double somaAlturas = 0;
+        int pesoMenor40 = 0;
+
+        for (int i = 1; i <= 10; i++) {
+            System.out.println("Pessoa" + i);
+
+            System.out.println("Digite a idade: ");
+            int idade = ler.nextInt();
+
+            System.out.println("Digite a altura(Em metros): ");
+            double altura = ler.nextDouble();
+
+            System.out.println("Digite o peso(kg): ");
+            double peso = ler.nextDouble();
+
+            if (idade > 50) {
+                maiores50++;
+            }
+            if (idade >= 10 && idade <= 20) {
+                somaAlturas += altura;
+                entre10e20++;
+            }
+            if (idade > 40) {
+                pesoMenor40++;
+            }
+            System.out.println("----------------------");
+        }
+        double mediaALturas = (entre10e20 > 0) ? somaAlturas / entre10e20 : 0;
+
+        double percentualPesoMenor40 = (pesoMenor40 * 100.0) / 10;
+
+        System.out.println("Resultado: ");
+        System.out.println("a) Pessoas mais de 50 anos: " + maiores50);
+        System.out.printf("b) Média das alturas(10 a 20 anos): %.2 metros\n ", mediaALturas);
+        System.out.printf("c) Porcentagem com peso < 40kg: %.2f%%\n  ", percentualPesoMenor40);
+    }
+}
+ 
